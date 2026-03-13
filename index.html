@@ -1,59 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Fundo Social de Solidariedade</title>
+<title>Fundo Social Portal</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
 
 </head>
 
 <body>
 
-<header class="header">
-
-<div class="container nav">
-
-<h2 class="logo">Fundo Social</h2>
+<header class="navbar">
+<h1>Fundo Social</h1>
 
 <nav>
-
-<a href="#inicio">Início</a>
-<a href="#impacto">Impacto</a>
-<a href="#cursos">Cursos</a>
-<a href="#projetos">Projetos</a>
-<a href="#contato">Contato</a>
-
+<a href="#">Projetos</a>
+<a href="#">Cursos</a>
+<a href="#">Impacto</a>
+<a href="#">Mapa</a>
 </nav>
-
-<button class="btn-main">Como ajudar</button>
-
-</div>
-
 </header>
 
 
-<section id="inicio" class="hero">
+<section class="hero">
 
-<div class="hero-content">
+<div class="hero-text">
 
-<h1>Transformando vidas através da solidariedade</h1>
+<h2>Transformando vidas através da solidariedade</h2>
 
 <p>
-O Fundo Social de Solidariedade promove cursos gratuitos,
-apoio social e oportunidades para a população de Pindamonhangaba.
+Cursos gratuitos, projetos sociais e oportunidades
+para toda a comunidade.
 </p>
 
-<div class="hero-buttons">
+<button>Ver projetos</button>
 
-<button class="btn-main">Ver Cursos</button>
-<button class="btn-outline">Receber Ajuda</button>
+</div>
 
+</section>
+
+
+<section class="impact">
+
+<h2>Nosso Impacto</h2>
+
+<div class="counters">
+
+<div class="counter">
+<h3 id="c1">0</h3>
+<p>Pessoas atendidas</p>
+</div>
+
+<div class="counter">
+<h3 id="c2">0</h3>
+<p>Cursos oferecidos</p>
+</div>
+
+<div class="counter">
+<h3 id="c3">0</h3>
+<p>Projetos sociais</p>
 </div>
 
 </div>
@@ -61,63 +75,30 @@ apoio social e oportunidades para a população de Pindamonhangaba.
 </section>
 
 
-<section id="impacto" class="impact">
+<section class="courses">
 
-<h2 class="section-title">Nosso Impacto</h2>
+<h2>Cursos disponíveis</h2>
 
-<div class="impact-grid">
-
-<div class="impact-card">
-<h3>24.000+</h3>
-<p>Pessoas capacitadas</p>
-</div>
-
-<div class="impact-card">
-<h3>8.400</h3>
-<p>Cestas básicas entregues</p>
-</div>
-
-<div class="impact-card">
-<h3>6.000+</h3>
-<p>Famílias atendidas</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="cursos" class="courses">
-
-<h2 class="section-title">Cursos Gratuitos</h2>
-
-<div class="grid">
+<div class="course-grid">
 
 <div class="card">
-
-<h3>Crochê e Bolsas</h3>
-<p>Curso de artesanato e geração de renda.</p>
-
-<button>Saiba mais</button>
-
+<h3>Costura</h3>
+<p>Aprenda técnicas de costura profissional.</p>
 </div>
 
 <div class="card">
-
 <h3>Panificação</h3>
-<p>Aprenda produção de pães e alimentos.</p>
-
-<button>Saiba mais</button>
-
+<p>Formação em produção de pães e doces.</p>
 </div>
 
 <div class="card">
+<h3>Informática</h3>
+<p>Inclusão digital e capacitação profissional.</p>
+</div>
 
-<h3>Amigurumi</h3>
-<p>Técnicas de crochê japonês.</p>
-
-<button>Saiba mais</button>
-
+<div class="card">
+<h3>Artesanato</h3>
+<p>Criação de produtos artesanais.</p>
 </div>
 
 </div>
@@ -125,89 +106,23 @@ apoio social e oportunidades para a população de Pindamonhangaba.
 </section>
 
 
-<section id="projetos" class="projects">
+<section class="map-section">
 
-<h2 class="section-title">Projetos Sociais</h2>
+<h2>Onde estamos atuando</h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>Fábrica da Solidariedade</h3>
-<p>Produção e distribuição de alimentos.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Varal Solidário</h3>
-<p>Doação de roupas para famílias.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Escola Reinvente</h3>
-<p>Capacitação profissional.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Projeto Antonieta</h3>
-<p>Proteção animal e apoio à causa.</p>
-
-</div>
-
-</div>
+<div id="map"></div>
 
 </section>
 
 
-<section class="cta">
+<footer>
 
-<div class="cta-content">
-
-<h2>Quer participar ou ajudar?</h2>
-
-<p>
-Entre em contato com o Fundo Social e descubra
-como participar das ações sociais.
-</p>
-
-<button class="btn-main">Entrar em contato</button>
-
-</div>
-
-</section>
-
-
-<footer id="contato">
-
-<div class="container footer-grid">
-
-<div>
-<h3>Fundo Social</h3>
-<p>Pindamonhangaba - SP</p>
-</div>
-
-<div>
-<h3>Contato</h3>
-<p>(12) 3643-2220</p>
-<p>fundo.social@pindamonhangaba.sp.gov.br</p>
-</div>
-
-<div>
-<h3>Horário</h3>
-<p>Segunda a Sexta</p>
-<p>8h às 17h</p>
-</div>
-
-</div>
-
-<p class="copy">© Fundo Social de Solidariedade</p>
+<p>Portal do Fundo Social</p>
 
 </footer>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="script.js"></script>
 
