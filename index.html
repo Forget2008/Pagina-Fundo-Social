@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fundo Social Portal</title>
+
+<title>Portal Fundo Social</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link
 rel="stylesheet"
@@ -20,54 +22,74 @@ href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 <body>
 
 <header class="navbar">
-<h1>Fundo Social</h1>
+
+<div class="logo">Fundo Social</div>
 
 <nav>
-<a href="#">Projetos</a>
-<a href="#">Cursos</a>
-<a href="#">Impacto</a>
-<a href="#">Mapa</a>
+
+<a href="#impacto">Impacto</a>
+<a href="#cursos">Cursos</a>
+<a href="#mapa">Mapa</a>
+
 </nav>
+
+<a class="btn-primary">Quero Participar</a>
+
 </header>
 
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="hero-content">
 
-<h2>Transformando vidas através da solidariedade</h2>
+<h1>Transformando vidas através da solidariedade</h1>
 
 <p>
 Cursos gratuitos, projetos sociais e oportunidades
 para toda a comunidade.
 </p>
 
-<button>Ver projetos</button>
+<div class="hero-buttons">
+
+<button class="btn-primary">Ver Projetos</button>
+
+<button class="btn-secondary">Cursos Gratuitos</button>
+
+</div>
 
 </div>
 
 </section>
 
 
-<section class="impact">
+<section class="section" id="impacto">
 
-<h2>Nosso Impacto</h2>
+<h2 class="title">Nosso Impacto</h2>
 
-<div class="counters">
+<div class="impact-grid">
 
-<div class="counter">
-<h3 id="c1">0</h3>
+<div class="impact-card">
+
+<h3 class="counter" data-target="24000">0</h3>
+
 <p>Pessoas atendidas</p>
+
 </div>
 
-<div class="counter">
-<h3 id="c2">0</h3>
+<div class="impact-card">
+
+<h3 class="counter" data-target="48">0</h3>
+
 <p>Cursos oferecidos</p>
+
 </div>
 
-<div class="counter">
-<h3 id="c3">0</h3>
+<div class="impact-card">
+
+<h3 class="counter" data-target="16">0</h3>
+
 <p>Projetos sociais</p>
+
 </div>
 
 </div>
@@ -75,30 +97,42 @@ para toda a comunidade.
 </section>
 
 
-<section class="courses">
+<section class="section" id="cursos">
 
-<h2>Cursos disponíveis</h2>
+<h2 class="title">Cursos disponíveis</h2>
 
-<div class="course-grid">
+<div class="courses">
 
-<div class="card">
+<div class="course-card">
+
 <h3>Costura</h3>
-<p>Aprenda técnicas de costura profissional.</p>
+
+<p>Aprenda técnicas profissionais de costura.</p>
+
 </div>
 
-<div class="card">
+<div class="course-card">
+
 <h3>Panificação</h3>
+
 <p>Formação em produção de pães e doces.</p>
+
 </div>
 
-<div class="card">
+<div class="course-card">
+
 <h3>Informática</h3>
+
 <p>Inclusão digital e capacitação profissional.</p>
+
 </div>
 
-<div class="card">
+<div class="course-card">
+
 <h3>Artesanato</h3>
+
 <p>Criação de produtos artesanais.</p>
+
 </div>
 
 </div>
@@ -106,9 +140,9 @@ para toda a comunidade.
 </section>
 
 
-<section class="map-section">
+<section class="section" id="mapa">
 
-<h2>Onde estamos atuando</h2>
+<h2 class="title">Onde estamos atuando</h2>
 
 <div id="map"></div>
 
@@ -120,7 +154,6 @@ para toda a comunidade.
 <p>Portal do Fundo Social</p>
 
 </footer>
-
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
