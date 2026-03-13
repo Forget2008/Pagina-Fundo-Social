@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Portal Fundo Social</title>
+<title>Impacto Social</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 
-<link
-rel="stylesheet"
-href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
 
-<body>
+<body class="bg-slate-50 text-slate-800 font-[Inter]">
 
-<header class="navbar">
+<!-- NAV -->
 
-<div class="logo">Fundo Social</div>
+<header class="fixed w-full z-50 backdrop-blur-md bg-white/70 shadow-sm">
 
-<nav>
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-<a href="#impacto">Impacto</a>
+<h1 class="font-bold text-xl">Impacto Social</h1>
+
+<nav class="space-x-6 hidden md:flex">
+
+<a href="#sobre">Sobre</a>
 <a href="#cursos">Cursos</a>
+<a href="#impacto">Impacto</a>
 <a href="#mapa">Mapa</a>
 
 </nav>
 
-<a class="btn-primary">Quero Participar</a>
+<button class="btn-primary">Participar</button>
+
+</div>
 
 </header>
 
+<!-- HERO -->
 
-<section class="hero">
+<section class="hero min-h-screen flex items-center justify-center text-center">
 
-<div class="hero-content">
+<div class="max-w-4xl px-6">
 
-<h1>Transformando vidas através da solidariedade</h1>
+<h1 class="text-5xl md:text-6xl font-bold mb-6">
+Transformando vidas através da educação
+</h1>
 
-<p>
-Cursos gratuitos, projetos sociais e oportunidades
-para toda a comunidade.
+<p class="text-lg text-slate-600 mb-8">
+Capacitação tecnológica e impacto social para comunidades.
 </p>
 
-<div class="hero-buttons">
+<div class="flex justify-center gap-4">
 
-<button class="btn-primary">Ver Projetos</button>
-
-<button class="btn-secondary">Cursos Gratuitos</button>
+<button class="btn-primary">Participar</button>
+<button class="btn-secondary">Conhecer cursos</button>
 
 </div>
 
@@ -61,34 +73,54 @@ para toda a comunidade.
 
 </section>
 
+<!-- CONTADORES -->
 
-<section class="section" id="impacto">
+<section id="impacto" class="py-20 bg-white">
 
-<h2 class="title">Nosso Impacto</h2>
+<div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10 text-center">
 
-<div class="impact-grid">
-
-<div class="impact-card">
-
-<h3 class="counter" data-target="24000">0</h3>
-
-<p>Pessoas atendidas</p>
-
+<div>
+<h2 class="counter text-5xl font-bold" data-target="1200">0</h2>
+<p>Pessoas impactadas</p>
 </div>
 
-<div class="impact-card">
-
-<h3 class="counter" data-target="48">0</h3>
-
-<p>Cursos oferecidos</p>
-
+<div>
+<h2 class="counter text-5xl font-bold" data-target="300">0</h2>
+<p>Alunos formados</p>
 </div>
 
-<div class="impact-card">
-
-<h3 class="counter" data-target="16">0</h3>
-
+<div>
+<h2 class="counter text-5xl font-bold" data-target="40">0</h2>
 <p>Projetos sociais</p>
+</div>
+
+<div>
+<h2 class="counter text-5xl font-bold" data-target="12">0</h2>
+<p>Bairros atendidos</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section id="sobre" class="py-20">
+
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+class="rounded-xl shadow-lg"/>
+
+<div>
+
+<h2 class="text-4xl font-bold mb-6">Sobre o projeto</h2>
+
+<p class="text-slate-600 leading-relaxed">
+Nosso projeto promove inclusão digital e capacitação profissional
+para jovens e adultos, oferecendo cursos tecnológicos e
+programas educacionais voltados ao desenvolvimento social.
+</p>
 
 </div>
 
@@ -96,42 +128,41 @@ para toda a comunidade.
 
 </section>
 
+<!-- CURSOS -->
 
-<section class="section" id="cursos">
+<section id="cursos" class="py-20 bg-slate-100">
 
-<h2 class="title">Cursos disponíveis</h2>
+<div class="max-w-7xl mx-auto px-6">
 
-<div class="courses">
+<h2 class="text-4xl font-bold mb-12 text-center">
+Cursos oferecidos
+</h2>
+
+<div class="grid md:grid-cols-4 gap-8">
 
 <div class="course-card">
-
-<h3>Costura</h3>
-
-<p>Aprenda técnicas profissionais de costura.</p>
-
+<h3>Programação</h3>
+<p>Desenvolvimento web e lógica.</p>
+<button>Saiba mais</button>
 </div>
 
 <div class="course-card">
-
-<h3>Panificação</h3>
-
-<p>Formação em produção de pães e doces.</p>
-
+<h3>Design</h3>
+<p>UI/UX e ferramentas criativas.</p>
+<button>Saiba mais</button>
 </div>
 
 <div class="course-card">
-
-<h3>Informática</h3>
-
-<p>Inclusão digital e capacitação profissional.</p>
-
+<h3>Robótica</h3>
+<p>Aprendizado com tecnologia.</p>
+<button>Saiba mais</button>
 </div>
 
 <div class="course-card">
-
-<h3>Artesanato</h3>
-
-<p>Criação de produtos artesanais.</p>
+<h3>Educação digital</h3>
+<p>Inclusão tecnológica.</p>
+<button>Saiba mais</button>
+</div>
 
 </div>
 
@@ -139,23 +170,92 @@ para toda a comunidade.
 
 </section>
 
+<!-- MAPA -->
 
-<section class="section" id="mapa">
+<section id="mapa" class="py-20">
 
-<h2 class="title">Onde estamos atuando</h2>
+<div class="max-w-7xl mx-auto px-6">
 
-<div id="map"></div>
+<h2 class="text-4xl font-bold text-center mb-12">
+Onde atuamos
+</h2>
+
+<div id="map" class="rounded-xl shadow-lg"></div>
+
+</div>
 
 </section>
 
+<!-- GRÁFICO -->
 
-<footer>
+<section class="py-20 bg-white">
 
-<p>Portal do Fundo Social</p>
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-10">
+Crescimento do projeto
+</h2>
+
+<canvas id="impactChart"></canvas>
+
+</div>
+
+</section>
+
+<!-- DEPOIMENTOS -->
+
+<section class="py-20 bg-slate-100">
+
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold text-center mb-12">
+Depoimentos
+</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="testimonial">
+<p>"Esse projeto mudou minha vida."</p>
+<span>— Ana</span>
+</div>
+
+<div class="testimonial">
+<p>"Aprendi programação e consegui emprego."</p>
+<span>— Lucas</span>
+</div>
+
+<div class="testimonial">
+<p>"Impacto real na comunidade."</p>
+<span>— Maria</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-24 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+
+<h2 class="text-4xl font-bold mb-6">
+Faça parte dessa transformação
+</h2>
+
+<button class="btn-white">
+Seja voluntário
+</button>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="py-10 text-center bg-slate-900 text-white">
+
+<p>© 2026 Impacto Social</p>
 
 </footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="script.js"></script>
 
