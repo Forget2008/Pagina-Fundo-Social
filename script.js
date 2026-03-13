@@ -1,24 +1,38 @@
-const counters = document.querySelectorAll('.counter')
+gsap.registerPlugin(ScrollTrigger);
 
-counters.forEach(counter=>{
+gsap.from(".hero h1",{
+opacity:0,
+y:40,
+duration:1
+})
 
-const update=()=>{
+gsap.from(".course-card",{
+scrollTrigger:".course-card",
+opacity:0,
+y:50,
+stagger:0.2
+})
 
-const target=+counter.getAttribute('data-target')
+const counters = document.querySelectorAll(".counter");
 
-const count=+counter.innerText
+counters.forEach(counter => {
 
-const increment=target/200
+const target = +counter.dataset.target;
 
-if(count<target){
+const update = () => {
 
-counter.innerText=Math.ceil(count+increment)
+const current = +counter.innerText;
 
-setTimeout(update,10)
+const increment = target / 200;
+
+if(current < target){
+
+counter.innerText = Math.ceil(current + increment);
+requestAnimationFrame(update);
 
 }else{
 
-counter.innerText=target
+counter.innerText = target;
 
 }
 
@@ -28,16 +42,24 @@ update()
 
 })
 
-
-var map=L.map('map').setView([-22.92,-45.46],12)
+const map = L.map('map').setView([-22.92,-45.46], 12);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-
 attribution:'© OpenStreetMap'
+}).addTo(map);
 
-}).addTo(map)
+L.marker([-22.92,-45.46]).addTo(map).bindPopup("Centro comunitário")
 
+const ctx = document.getElementById('impactChart');
 
-L.marker([-22.92,-45.46]).addTo(map)
-
-.bindPopup("Centro do Fundo Social")
+new Chart(ctx,{
+type:'line',
+data:{
+labels:["2020","2021","2022","2023","2024"],
+datasets:[{
+label:"Alunos",
+data:[50,120,250,400,600],
+borderColor:"#6366f1"
+}]
+}
+})
