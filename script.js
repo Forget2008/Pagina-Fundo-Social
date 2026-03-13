@@ -1,26 +1,39 @@
-const elements = document.querySelectorAll('.impact-card, .card')
 
-const observer = new IntersectionObserver(entries => {
+function animateCounter(id,target){
 
-entries.forEach(entry => {
+let element=document.getElementById(id)
 
-if(entry.isIntersecting){
+let count=0
 
-entry.target.style.opacity = 1
-entry.target.style.transform = "translateY(0)"
+let interval=setInterval(()=>{
+
+count+=Math.ceil(target/100)
+
+if(count>=target){
+count=target
+clearInterval(interval)
+}
+
+element.innerText=count
+
+},20)
 
 }
 
-})
 
-})
+animateCounter("c1",1250)
+animateCounter("c2",48)
+animateCounter("c3",16)
 
-elements.forEach(el => {
 
-el.style.opacity = 0
-el.style.transform = "translateY(40px)"
-el.style.transition = "all 0.6s ease"
 
-observer.observe(el)
+var map=L.map('map').setView([-22.92,-45.46],12)
 
-})
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+attribution:'© OpenStreetMap'
+}).addTo(map)
+
+
+L.marker([-22.92,-45.46])
+.addTo(map)
+.bindPopup("Centro de atuação do Fundo Social")
