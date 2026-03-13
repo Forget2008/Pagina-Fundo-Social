@@ -1,39 +1,64 @@
+const counters = document.querySelectorAll(".counter h3")
 
-function animateCounter(id,target){
+counters.forEach(counter => {
 
-let element=document.getElementById(id)
+counter.innerText = "0"
 
-let count=0
+const update = () => {
 
-let interval=setInterval(()=>{
+const target = +counter.getAttribute("data-target")
+const c = +counter.innerText
 
-count+=Math.ceil(target/100)
+const increment = target / 200
 
-if(count>=target){
-count=target
-clearInterval(interval)
+if(c < target){
+counter.innerText = `${Math.ceil(c + increment)}`
+setTimeout(update,10)
+}else{
+counter.innerText = target
 }
 
-element.innerText=count
+}
 
-},20)
+update()
+
+})
+
+
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = 1
+entry.target.style.transform = "translateY(0)"
 
 }
 
+})
 
-animateCounter("c1",1250)
-animateCounter("c2",48)
-animateCounter("c3",16)
-
+})
 
 
-var map=L.map('map').setView([-22.92,-45.46],12)
+document.querySelectorAll(".card,.counter").forEach(el => {
+
+el.style.opacity = 0
+el.style.transform = "translateY(40px)"
+el.style.transition = "all 0.6s ease"
+
+observer.observe(el)
+
+})
+
+
+
+var map = L.map('map').setView([-22.92,-45.46],12)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 attribution:'© OpenStreetMap'
 }).addTo(map)
 
-
-L.marker([-22.92,-45.46])
-.addTo(map)
+L.marker([-22.92,-45.46]).addTo(map)
 .bindPopup("Centro de atuação do Fundo Social")
