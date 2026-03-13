@@ -1,0 +1,1 @@
+console.log('Portal do Fundo Social carregado com sucesso');
